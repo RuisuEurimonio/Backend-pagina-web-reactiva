@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/form.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Russo+One&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title> Formulario de usuarios. </title>
+</head>
+<body>
+
+  <div class="button-bottom">
+    <a href="#button_add-container" id="img_container-link">
+      <img src="resources/flecha.png" id="img-link">
+    </a>
+</div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link subtitle" href="home.html">Home.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active subtitle" href="userForm.html">Users.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link subtitle" href="productForm.html">Products.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link subtitle" href="orderForm.html">Orders.</a>
+            </li>
+            <li class="nav-item container-text">
+              <a href="home.html" class="nav-link subtitle"> Contra Corriente LTDA. </a>
+            </li>
+            <li class="nav-item container-img">
+              <a href="home.html" class="nav-link">
+                <img class="img_logo-nav" src="resources/logopng.png" alt="logo peripherals" title="logo peripherals">
+              </a>
+            </li>
+            <li class="nav-item container-logaut">
+              <a href="index.html" class="nav-link subtitle"> Salir. </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+  <div class="container-content">
+    <div class="content">
+      <h1 class="title fs-1"> Usuarios. </h1>
+      <div id="userTable" class="userTable table-responsive"></div>
+      <div class="button-add">
+        <button class="btn btn-primary text" type="button" data-bs-toggle="modal" data-bs-target="#myModal" onclick="addUser()">Agregar usuarios.</button>
+      </div>
+    </div>
+
+    <!-- modal-content -->
+    <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title subtitle fs-2" id="title-modal-act"> Guardar Usuario.  </h2>
+                </div>
+                <div class="modal-body">
+                    
+                    <form onsubmit="login(event)" class="was-validated formulario">
+                        <div class="container-body">
+                                  <div class="mb-3 div_container-input invisible">
+                                    <label for="idUser" class="form-label subtitle fs-4"> id:</label>
+                                    <input type="text" class="form-control" id="idUser" placeholder="Id." name="id" required>
+                                </div>
+                                <div class="mb-3 div_container-input">
+                                    <label for="identificationUser" class="form-label subtitle fs-4"> Identificación:</label>
+                                    <input type="text" class="form-control" id="identificationUser" placeholder="Identification." name="identification" required>
+                                </div>
+                                <div class="mb-3 div_container-input">
+                                    <label for="nameUser" class="form-label subtitle fs-4">Nombre:</label>
+                                    <input type="text" class="form-control" id="nameUser" placeholder="Name" name="Name" required>
+                                </div>
+                                <div class="mb-3 div_container-input">
+                                    <label for="addresUser" class="form-label subtitle fs-4">Dirección:</label>
+                                    <input type="text" class="form-control" id="addresUser" placeholder="Addres" name="Addres" required>
+                                </div>
+                                <div class="mb-3 div_container-input">
+                                    <label for="telephoneUser" class="form-label subtitle fs-4">Telefono:</label>
+                                    <input type="text" class="form-control" id="telephoneUser" placeholder="Telephone" name="Telephone" required>
+                                </div>
+                                <div class="mb-3 div_container-input">
+                                <label for="emailUser" class="form-label subtitle fs-4">Correo:</label>
+                                <input type="email" class="form-control" id="emailUser" placeholder="Email" name="Email" required>
+                                </div>
+                                <div class="mb-3 div_container-input">
+                                    <label for="passwordUser" class="form-label subtitle fs-4">Contraseña:</label>
+                                    <input type="password" class="form-control" id="passwordUser" placeholder="Password" name="Password" required>
+                                </div>
+                                <div class="select">
+                                  <label for="zoneUser" class="form-label subtitle fs-4">Zona:</label>
+                                  <select class="" id="zoneUser" required>
+                                      <option selected disabled="disabled" value="">Selecciona una zona.</option>
+                                      <option value="Suroccidente">Suroccidente.</option>
+                                      <option value="Suroriente">Suroriente.</option>
+                                      <option value="Norte - Centro histórico">Norte - Centro histórico.</option>
+                                      <option value="Metropolitana">Metropolitana.</option>
+                                      <option value="Riomar">Riomar.</option>
+                                  </select>
+                              </div>
+                            <div class="mb-3 div_container-input center"  id="select-input">
+                                <div class="select">
+                                    <label for="TypeUser" class="form-label subtitle fs-4">Tipo usuario:</label>
+                                    <select class="" id="typeUser" required>
+                                        <option selected disabled="disabled" value="">Selecciona un tipo</option>
+                                        <option value="Coordinador de zona">Coordinador de zona.</option>
+                                        <option value="Asesor comercial">Asesor comercial.</option>
+                                        <option value="Administrador">Administrador.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>    
+                    </form> 
+                
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary text fs-5" data-bs-dismiss="modal" onclick="cleanUser()"> cerrar. </button>
+                    <button id="add-btn" type="submit" class="btn btn-primary text fs-5" onclick="saveUser()" > guardar. </button>
+                    <button id="update-btn" type="submit" class="btn btn-primary text fs-5 invisible" onclick="validateChangeEmail()" data-bs-dismiss="modal"> Actualizar. </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    <div class="mt-5 p-4 bg-dark text-white text-center footer">
+        <p class="fs-5">Todos los derechos reservados @2021.</p>
+      </div>
+   
+    <script type="text/javascript" src="js/usersCrud.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/sesion.js"></script>
+
+</body>
+</html>
